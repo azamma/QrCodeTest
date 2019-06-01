@@ -12,6 +12,9 @@ import android.util.Log;
 import android.util.SparseArray;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
 import com.google.android.gms.vision.CameraSource;
 import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.barcode.Barcode;
@@ -37,6 +40,8 @@ public class QRCodeScanActivity extends AppCompatActivity {
     /* Function used to initialize components of activity */
     public void initStuff() {
 
+
+
         /* Initializing objects */
         surfaceQRScanner = findViewById(R.id.surfaceQRScanner);
         barcodeDetector = new BarcodeDetector.Builder(this)
@@ -60,7 +65,7 @@ public class QRCodeScanActivity extends AppCompatActivity {
                                 String[]{Manifest.permission.CAMERA}, 1024);
                     }
                 } catch (IOException e) {
-                    Log.e("Camera start error-->> ", e.getMessage().toString());
+                    Log.e("Camera start error-->> ", e.getMessage());
                 }
             }
 
